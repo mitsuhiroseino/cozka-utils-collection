@@ -1,6 +1,4 @@
-import isIterable from '@cozka/utils-lang/isIterable';
 import isPlainObject from 'lodash-es/isPlainObject';
-import toArray from 'lodash-es/toArray';
 
 /**
  * 配列、オブジェクトの場合はその要素毎にfnを実行する
@@ -13,9 +11,6 @@ export default function each(
   items: any,
   fn: (item: unknown, key?: PropertyKey | any, items?: any) => any | void,
 ): any {
-  if (isIterable(items)) {
-    items = toArray(items);
-  }
   if (Array.isArray(items)) {
     // 配列などのiterableなものの場合
     for (const index in items) {

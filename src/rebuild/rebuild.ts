@@ -15,6 +15,9 @@ export default function rebuild(
   ) => item,
   options?: RebuildOptions,
 ): any {
+  if (source == null) {
+    return source;
+  }
   return _rebuild(source, fn, options);
 }
 

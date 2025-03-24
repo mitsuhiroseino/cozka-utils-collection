@@ -11,6 +11,6 @@ function cleanFn<T>(arg: T): T | undefined {
  */
 export default function clean(target: any, options: CleanOptions = {}): any {
   const { removeNull, ...rest } = options;
-const    fn = removeNull ? cleanFn : (item) => item;
+  const fn = removeNull ? cleanFn : (item) => item;
   return rebuild(target, fn, rest);
 }
